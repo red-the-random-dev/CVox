@@ -30,7 +30,7 @@ typedef struct _waveHeader WHEADER;
 
 int writeWaveIntoFile(FILE * f, ITimedWave * itw, double PlayTime);
 
-WHEADER * getHeaderFromFile(FILE * f);
+WHEADER * getHeaderFromFile(FILE * f); // Currently unimplemented
 WHEADER * buildWaveHeader(ITimedWave * itw, double PlayTime);
 
 #endif // WAVEFMT_H_INCLUDED
