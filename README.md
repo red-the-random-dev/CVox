@@ -1,5 +1,5 @@
 # CVox
-Audio synthesis library for C Programming Language.
+8-bit audio synthesis library for C Programming Language.
 
 Derived from DotVox Audio Library for .NET (https://github.com/red-the-random-dev/DotVox)
 
