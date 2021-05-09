@@ -4,9 +4,7 @@
 #define PI 3.1415926535f
 #include <math.h>
 #include <stdlib.h>
-
-typedef char (*SoundFunction)(void * obj, double TimeStamp);
-typedef void (*DisposalFunction)(void * obj);
+#include "timedwave.h"
 
 int __makeConvertible(int target)
 {
@@ -14,33 +12,12 @@ int __makeConvertible(int target)
     return (pre_def < 256 ? pre_def : 255);
 }
 
-struct _twave
-{
-    SoundFunction getAt;
-    DisposalFunction dispose;
-    void * additiveData;
-    float deltaTime;
-};
-
-typedef struct _twave ITimedWave;
-
-struct _oscill
-{
-    double frequency;
-    char amplitude;
-    unsigned int lambda;
-    float period;
-    unsigned int type;
-};
-
-typedef struct _oscill Oscillation;
-
 char getSoundAt(ITimedWave * itw, double TimeStamp)
 {
     return itw->getAt(itw->additiveData, TimeStamp);
 }
 
-char OscillationFunction(void * data, double TimeStamp)
+unsigned char OscillationFunction(void * data, double TimeStamp)
 {
     Oscillation * osc = (Oscillation*) data;
     switch (osc->type)
@@ -49,7 +26,7 @@ char OscillationFunction(void * data, double TimeStamp)
         {
             double arg = sin(TimeStamp*PI*osc->frequency)*sin(TimeStamp*PI*osc->frequency)*osc->amplitude;
             // printf("\nSine function triggered: %d %f %f ", osc->amplitude, TimeStamp, arg);
-            return ((char)__makeConvertible((int)arg));
+            return ((unsigned char)__makeConvertible((int)arg));
         }
         default:
         {
@@ -67,7 +44,7 @@ void OscillationDispose(void * data)
     free(data);
 }
 
-ITimedWave * newOscillation(unsigned int type, char amplitude, double frequency, unsigned int sampleRate)
+ITimedWave * newOscillation(unsigned int type, unsigned char amplitude, double frequency, unsigned int sampleRate)
 {
     ITimedWave * x = (ITimedWave*) malloc(sizeof(ITimedWave));
     Oscillation * y = (Oscillation*) malloc(sizeof(Oscillation));

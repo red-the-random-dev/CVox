@@ -31,10 +31,21 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="main.c">
+		<Unit filename="__example.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="timedwave.h" />
+		<Unit filename="cvox/conjwave.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cvox/conjwave.h" />
+		<Unit filename="cvox/timedwave.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cvox/timedwave.h" />
+		<Unit filename="cvox/wavefmt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cvox/wavefmt.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

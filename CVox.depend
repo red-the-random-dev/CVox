@@ -20,24 +20,36 @@
 1620454312 c:\users\lenovo yoga\desktop\scripts\c++\cvox\wavefmt.h
 	<stdio.h>
 
-1620455058 source:c:\users\lenovo yoga\desktop\scripts\c++\cvox\__example.c
+1620535167 source:c:\users\lenovo yoga\desktop\scripts\c++\cvox\__example.c
 	<stdio.h>
 	<stdlib.h>
 	"cvox/timedwave.h"
 	"cvox/wavefmt.h"
+	"cvox/conjwave.h"
 
-1620442936 c:\users\lenovo yoga\desktop\scripts\c++\cvox\cvox\timedwave.h
+1620534205 c:\users\lenovo yoga\desktop\scripts\c++\cvox\cvox\timedwave.h
 
-1620454312 c:\users\lenovo yoga\desktop\scripts\c++\cvox\cvox\wavefmt.h
+1620455129 c:\users\lenovo yoga\desktop\scripts\c++\cvox\cvox\wavefmt.h
 	<stdio.h>
 
-1620442956 source:c:\users\lenovo yoga\desktop\scripts\c++\cvox\cvox\timedwave.c
+1620534219 source:c:\users\lenovo yoga\desktop\scripts\c++\cvox\cvox\timedwave.c
 	<math.h>
 	<stdlib.h>
+	"timedwave.h"
 
 1620454112 source:c:\users\lenovo yoga\desktop\scripts\c++\cvox\cvox\wavefmt.c
 	<stdio.h>
 	<stdlib.h>
 	"timedwave.h"
 	"wavefmt.h"
+
+1620537254 source:c:\users\lenovo yoga\desktop\scripts\c++\cvox\cvox\conjwave.c
+	"timedwave.h"
+	"conjwave.h"
+	<stdlib.h>
+	<stdio.h>
+
+1620534485 c:\users\lenovo yoga\desktop\scripts\c++\cvox\cvox\conjwave.h
+	"timedwave.h"
+	<stdlib.h>
 

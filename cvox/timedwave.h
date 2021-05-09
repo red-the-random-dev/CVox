@@ -6,7 +6,7 @@
 #define OSCILL_TRIANGLE 3
 #define OSCILL_PULSE 4
 
-typedef char (*SoundFunction)(void * obj, double TimeStamp);
+typedef unsigned char (*SoundFunction)(void * obj, double TimeStamp);
 typedef void (*DisposalFunction)(void * obj);
 
 struct _twave
@@ -24,7 +24,7 @@ char getSoundAt(ITimedWave * itw, double TimeStamp);
 struct _oscill
 {
     double frequency;
-    char amplitude;
+    unsigned char amplitude;
     unsigned int lambda;
     float period;
     unsigned int type;
@@ -32,8 +32,8 @@ struct _oscill
 
 typedef struct _oscill Oscillation;
 
-char OscillationFunction(void * data, double TimeStamp);
-ITimedWave * newOscillation(unsigned int type, char amplitude, double frequency, unsigned int sampleRate);
+unsigned char OscillationFunction(void * data, double TimeStamp);
+ITimedWave * newOscillation(unsigned int type, unsigned char amplitude, double frequency, unsigned int sampleRate);
 void OscillationDispose(void * data);
 
 int __makeConvertible(int target);
